@@ -55,7 +55,8 @@ Officer: Can manage cases and assignments
 This JavaFX application is a structured, role-based crime management system, with clear navigation and user-friendly interfaces tailored to each type or user. It is ideal for desktop use in local police stations or administrative offices. 
 
 
-#===========================================HOW TO RUN THE PROJECT =========================
+#HOW TO RUN THE PROJECT 
+
 # Prerequisite 
 [IntelliJ IDEA](https://www.jetbrains.com/idea/) (Community or Ultimate)
 - Java JDK 17 or compatible
@@ -69,6 +70,7 @@ This JavaFX application is a structured, role-based crime management system, wit
    cd crime_record_management
  Download Firebase SDK, rename it [serviceAccountKey.json]
 - Copy and paste it inside [files]
+- Run the project. 
 - Use Crime Record potal to register/login
 
   
