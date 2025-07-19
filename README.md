@@ -1,6 +1,4 @@
-
-
-
+CRIME RECORD MANAGEMENT SYSTEM
 
 Crime Record Management System-JavaFX Application
 Overview:
@@ -54,7 +52,26 @@ Admin: Full access to system setting and use data
 Civilian: Can file complaints and view related FIRs
 Officer: Can manage cases and assignments 
 
-
 This JavaFX application is a structured, role-based crime management system, with clear navigation and user-friendly interfaces tailored to each type or user. It is ideal for desktop use in local police stations or administrative offices. 
+
+
+#===========================================HOW TO RUN THE PROJECT =========================
+# Prerequisite 
+[IntelliJ IDEA](https://www.jetbrains.com/idea/) (Community or Ultimate)
+- Java JDK 17 or compatible
+- JavaFX SDK 21 || 24
+- Internet connection (for Firebase)
+- Firebase project credentials
+-
+  # Setup
+  ```bash
+   git clone https://github.com/CSC325-SEF/crime_record_management.git
+   cd crime_record_management
+ Download Firebase SDK, rename it [serviceAccountKey.json]
+- Copy and paste it inside [files]
+- Use Crime Record potal to register/login
+
+  
+
 
 
