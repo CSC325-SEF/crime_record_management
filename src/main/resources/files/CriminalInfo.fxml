@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx"
+            fx:controller="com.example.crimerecord.CriminalInfoController"
+            prefHeight="500.0" prefWidth="600.0"
+            style="-fx-padding: 20;">
+
+    <!-- Top Header -->
+    <top>
+        <VBox spacing="5">
+        <Label text="Criminal Info"
+               style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: white; -fx-background-color: #3949ab; -fx-padding: 20;"
+               alignment="CENTER"
+               maxWidth="Infinity"
+               BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="15" bottom="15" left="15" right="15"/>
+            </padding>
+        </Label>
+
+            <Separator />
+            <Region prefHeight="10"/>
+        </VBox>
+    </top>
+
+    <!-- Main Form -->
+    <center>
+        <VBox spacing="10"  alignment="TOP_CENTER">
+            <TextField fx:id="criminalIdField" promptText="Criminal ID"/>
+            <Button text="Load" onAction="#onLoadClicked"/>
+
+            <TextField fx:id="nameField" promptText="Name"/>
+            <TextField fx:id="genderField" promptText="Gender"/>
+            <TextField fx:id="dobField" promptText="Date of Birth"/>
+            <TextField fx:id="addressField" promptText="Address"/>
+            <TextArea fx:id="crimesField" promptText="Crimes (comma-separated)" prefRowCount="3"/>
+            <TextArea fx:id="datesField" promptText="Offense Dates (comma-separated yyyy-MM-dd)" prefRowCount="2"/>
+            <TextField fx:id="punishmentField" promptText="Punishment"/>
+            <TextField fx:id="statusField" promptText="Status"/>
+        </VBox>
+    </center>
+</BorderPane>

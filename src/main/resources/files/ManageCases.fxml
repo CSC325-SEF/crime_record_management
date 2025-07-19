@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.crimerecord.ManageCaseController"
+            prefHeight="500.0" prefWidth="800.0">
+
+    <!-- Title Bar -->
+    <top>
+        <Label text="Manage Criminal Cases"
+               style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: white; -fx-background-color: #3949ab; -fx-padding: 20;"
+               maxWidth="Infinity"
+               alignment="CENTER"
+               BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="15" right="15" bottom="15" left="15"/>
+            </padding>
+        </Label>
+    </top>
+
+    <!-- Table and Buttons -->
+    <center>
+        <VBox spacing="15">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <TableView fx:id="caseTable" prefHeight="400.0" prefWidth="750.0">
+                <columns>
+                    <TableColumn fx:id="colCaseId" text="Case ID" prefWidth="100"/>
+                    <TableColumn fx:id="colCriminalId" text="Criminal ID" prefWidth="100"/>
+                    <TableColumn fx:id="colOfficerId" text="Officer ID" prefWidth="100"/>
+                    <TableColumn fx:id="colStatus" text="Status" prefWidth="100"/>
+                    <TableColumn fx:id="colDate" text="Date" prefWidth="150"/>
+                    <TableColumn fx:id="colRemarks" text="Remarks" prefWidth="200"/>
+                </columns>
+            </TableView>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Button text="Add Case" fx:id="btnAdd" style="-fx-background-color: #4caf50; -fx-text-fill: white;" />
+                <Button text="Edit Case" fx:id="btnEdit" style="-fx-background-color: #ffc107; -fx-text-fill: black;" />
+                <Button text="Delete Case" fx:id="btnDelete" style="-fx-background-color: #f44336; -fx-text-fill: white;" />
+                <Button text="Refresh" fx:id="btnRefresh" style="-fx-background-color: #2196f3; -fx-text-fill: white;" />
+            </HBox>
+        </VBox>
+    </center>
+
+    <!-- Status Label -->
+    <bottom>
+        <Label fx:id="messageLabel"
+               text="Ready."
+               style="-fx-font-size: 14px; -fx-padding: 10px;"
+               maxWidth="Infinity"
+               alignment="CENTER_LEFT"
+               BorderPane.alignment="CENTER"/>
+    </bottom>
+
+</BorderPane>

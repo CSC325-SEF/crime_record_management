@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.crimerecord.SettingsController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <!-- Top Header -->
+    <top>
+        <VBox spacing="10">
+            <Label text="System Settings"
+                   style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: white; -fx-background-color: #3949ab;"
+                   maxWidth="Infinity">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+            </Label>
+            <Separator />
+        </VBox>
+    </top>
+
+    <!-- Main Form -->
+    <center>
+        <VBox spacing="15" alignment="TOP_LEFT" style="-fx-padding: 20;">
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="App Theme:" prefWidth="150"/>
+                <ChoiceBox fx:id="themeChoiceBox" prefWidth="200">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Light"/>
+                            <String fx:value="Dark"/>
+                            <String fx:value="System Default"/>
+                        </FXCollections>
+                    </items>
+                </ChoiceBox>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Auto Save Interval (mins):" prefWidth="150"/>
+                <TextField fx:id="autoSaveIntervalField" prefWidth="200" promptText="Enter minutes"/>
+            </HBox>
+
+            <Button fx:id="btnSaveSettings" text="Save Settings" prefWidth="150"/>
+            <Label fx:id="lblStatus" style="-fx-text-fill: green;"/>
+        </VBox>
+    </center>
+
+</BorderPane>

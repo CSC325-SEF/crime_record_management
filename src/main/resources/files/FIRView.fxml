@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.crimerecord.FIRController"
+            prefHeight="500.0" prefWidth="800.0"
+            style="-fx-background-color: #f8f8f8; -fx-padding: 20;">
+
+    <!-- Top Header Label -->
+    <top>
+        <VBox spacing="5">
+        <Label text="Filed FIRs"
+               style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: white; -fx-background-color: #3949ab; -fx-padding: 20;"
+               alignment="CENTER"
+               maxWidth="Infinity"
+               BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="15" right="15" bottom="15" left="15"/>
+            </padding>
+        </Label>
+
+        <Separator />
+        <Region prefHeight="10"/>
+        </VBox>
+    </top>
+
+    <!-- Main Content Area -->
+
+    <center>
+        <VBox spacing="15">
+            <TableView fx:id="firTable" prefHeight="400.0">
+                <columns>
+                    <TableColumn fx:id="colFIRId" text="FIR ID" prefWidth="100"/>
+                    <TableColumn fx:id="colComplaintId" text="Complaint ID" prefWidth="120"/>
+                    <TableColumn fx:id="colOfficerId" text="Officer ID" prefWidth="120"/>
+                    <TableColumn fx:id="colStatus" text="Status" prefWidth="100"/>
+                    <TableColumn fx:id="colCreateAt" text="Created At" prefWidth="150"/>
+                    <TableColumn fx:id="colRemarks" text="Remarks" prefWidth="180"/>
+                </columns>
+            </TableView>
+
+            <Label fx:id="messageLabel" style="-fx-text-fill: red;" />
+        </VBox>
+    </center>
+
+</BorderPane>

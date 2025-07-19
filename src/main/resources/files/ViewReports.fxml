@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.crimerecord.ViewReportsController"
+            prefHeight="600.0" prefWidth="900.0">
+
+    <!-- Top Header -->
+    <top>
+        <StackPane>
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            <Label text="View Crime Reports"
+                   style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: white; -fx-background-color: #3949ab; -fx-padding: 20;"
+                   alignment="CENTER"
+                   maxWidth="1.7976931348623157E308" />
+        </StackPane>
+    </top>
+
+    <!-- Center Table and Buttons -->
+    <center>
+        <VBox spacing="15">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            <TableView fx:id="reportTable" prefHeight="450.0" prefWidth="860.0">
+                <columns>
+                    <TableColumn fx:id="colReportId" text="Report ID" prefWidth="100"/>
+                    <TableColumn fx:id="colCaseId" text="Case ID" prefWidth="100"/>
+                    <TableColumn fx:id="colOfficer" text="Officer" prefWidth="150"/>
+                    <TableColumn fx:id="colSummary" text="Summary" prefWidth="250"/>
+                    <TableColumn fx:id="colDate" text="Date" prefWidth="150"/>
+                </columns>
+            </TableView>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Button fx:id="btnView" text="View Details"
+                        style="-fx-background-color: #4caf50; -fx-text-fill: white;"/>
+                <Button fx:id="btnRefresh" text="Refresh"
+                        style="-fx-background-color: #2196f3; -fx-text-fill: white;"/>
+                <Button fx:id="btnExport" text="Export to PDF"
+                        style="-fx-background-color: #9c27b0; -fx-text-fill: white;"/>
+                <Button fx:id="btnPrint" text="Print"
+                        style="-fx-background-color: #ff9800; -fx-text-fill: white;"/>
+            </HBox>
+        </VBox>
+    </center>
+
+    <!-- Bottom Status Label -->
+    <bottom>
+        <Label fx:id="statusLabel"
+               text="Ready."
+               style="-fx-font-size: 14px; -fx-padding: 10px;"
+               alignment="CENTER_LEFT"
+               maxWidth="1.7976931348623157E308"/>
+    </bottom>
+</BorderPane>

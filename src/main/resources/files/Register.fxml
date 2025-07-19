@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<?import javafx.scene.text.TextFlow?>
+<?import javafx.scene.text.Text?>
+<VBox spacing="15" alignment="CENTER" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.crimerecord.RegisterController"
+      prefHeight="800" prefWidth="1200"
+
+      style="-fx-background-color: linear-gradient(to bottom right, #fffafa , #f5f5f5); -fx-padding: 40;">
+
+<Label text="Create an Account" style="-fx-font-size: 28; -fx-font-weight: bold;"/>
+
+
+    <TextField fx:id="displayNameField" promptText="Username" maxWidth="320"
+               style="-fx-font-size: 14; -fx-background-radius: 5; -fx-padding: 10;"/>
+
+
+    <TextField fx:id="emailField" promptText="Email" maxWidth="320"
+               style="-fx-font-size: 14; -fx-background-radius: 5; -fx-padding: 10;"/>
+
+    <!-- Role selector-->
+    <ChoiceBox fx:id="roleChoiceBox" maxWidth="320"
+               style="-fx-font-size: 14; -fx-background-radius: 5; -fx-padding: 10;"/>
+
+
+
+    <PasswordField fx:id="passwordField" promptText="Password" maxWidth="320"
+                   style="-fx-font-size: 14; -fx-background-radius: 5; -fx-padding: 10;"/>
+
+    <PasswordField fx:id="confirmPasswordField" promptText="Confirm Password" maxWidth="320"
+                   style="-fx-font-size: 14; -fx-background-radius: 5; -fx-padding: 10;"/>
+
+    <Label fx:id="messageLabel" textFill="#ff6961" wrapText="true" maxWidth="320" style="-fx-font-weight: bold;"/>
+
+    <Button text="Register" onAction="#handleRegister" maxWidth="320"
+            style="-fx-font-size: 16; -fx-background-color: #00c853; -fx-text-fill: white; -fx-background-radius: 5;"/>
+
+    <TextFlow style="-fx-padding: 10 0 0 0; -fx-text-alignment: center;">
+        <Text text="Already have an account " />
+        <Text text="Login"
+              style="-fx-fill: #007bff; -fx-underline: true; -fx-cursor: hand; -fx-font-size: 14;"
+              onMouseClicked="#openLogin" />
+    </TextFlow>
+</VBox>
+
+

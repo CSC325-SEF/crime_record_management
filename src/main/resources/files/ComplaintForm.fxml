@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.crimerecord.ComplaintController"
+            prefHeight="400.0" prefWidth="600.0"
+            style="-fx-padding: 20;">
+
+    <!-- Header at the top -->
+    <top>
+        <VBox spacing="5">
+        <Label text="Submit Complaint"
+               style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: white; -fx-background-color: #3949ab; -fx-padding: 20;"
+               maxWidth="Infinity"
+               alignment="CENTER"
+               BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="15" right="15" bottom="25" left="15"/>
+            </padding>
+        </Label>
+
+        <Separator />
+        <Region prefHeight="10"/>
+    </VBox>
+    </top>
+
+    <!-- Main form in center -->
+    <center>
+        <VBox spacing="15" alignment="TOP_CENTER">
+            <TextField fx:id="titleField" promptText="Title (optional)" maxWidth="580"/>
+            <TextField fx:id="locationField" promptText="Location" maxWidth="580"/>
+            <TextArea fx:id="descriptionField" promptText="Description" wrapText="true" maxWidth="580" prefHeight="120"/>
+
+            <Button text="Submit" fx:id="submitButton" maxWidth="150"/>
+            <Label fx:id="messageLabel" textFill="red" wrapText="true"/>
+        </VBox>
+    </center>
+
+</BorderPane>
