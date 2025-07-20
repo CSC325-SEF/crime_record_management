@@ -9,7 +9,7 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-
+// FXML-linked UI elements: buttons for navigation and a label for messages
 public class OfficerDashboardController {
     @FXML
     private Button btnLogout, btnManageCases, btnViewAssignments, btnReportStatus;
@@ -18,9 +18,12 @@ public class OfficerDashboardController {
     private Label messageLabel;
 
     private String loggedInUserId;
+
+    // Stores the ID of the officer currently logged in
     public void setLoggedInUserId(String id){
         this.loggedInUserId = id;
     }
+// Called automatically when the FXML is loaded
 
     @FXML
     public void initialize() {
@@ -60,7 +63,7 @@ public class OfficerDashboardController {
             messageLabel.setText("Failed to open Manage Cases.");
         }
     }
-
+    // Opens the View Assignments window and passes in the officer's ID
     private void openViewAssignments() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/files/ViewAssignments.fxml"));
@@ -78,7 +81,7 @@ public class OfficerDashboardController {
             messageLabel.setText("Failed to open View Assignments.");
         }
     }
-
+    // Opens the Report Status window and passes in the officer's ID
     private void openReportStatus() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/files/ViewReports.fxml"));

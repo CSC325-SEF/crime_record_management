@@ -14,25 +14,25 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class ViewAssignmentsController {
-
+    // Table and columns to display assignment data
     @FXML private TableView<Assignment> assignmentTable;
     @FXML private TableColumn<Assignment, String> colAssignmentId;
     @FXML private TableColumn<Assignment, String> colCaseId;
     @FXML private TableColumn<Assignment, String> colOfficer;
     @FXML private TableColumn<Assignment, String> colDateAssigned;
     @FXML private TableColumn<Assignment, String> colStatus;
-
+    // Action buttons and status label
     @FXML private Button btnView;
     @FXML private Button btnRefresh;
     @FXML private Button btnExport;
     @FXML private Button btnPrint;
     @FXML private Label statusLabel;
-
+    // Setter used to pass in the logged-in officer/admin ID
     private String loggedInUserId;
     public void setLoggedInUserId(String id){
         this.loggedInUserId = id;
     }
-
+    // Called after the FXML is loaded
     @FXML
     public void initialize() {
         bindColumns(); // You forgot to call this
@@ -40,7 +40,7 @@ public class ViewAssignmentsController {
 
 
     }
-
+    // Maps each table column to its corresponding property in Assignment
     private void bindColumns() {
         colAssignmentId.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getAssignmentId()));
         colCaseId.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getCaseId()));
@@ -55,6 +55,7 @@ public class ViewAssignmentsController {
             }
         });
     }
+    // Loads all assignments from the service and populates the TableView
 
     private void loadAssignments() {
         try {
@@ -66,6 +67,7 @@ public class ViewAssignmentsController {
             statusLabel.setText("Failed to load assignments.");
         }
     }
+    // Shows a pop-up with full details of the selected assignment
 
     private void handleViewDetails() {
         Assignment selected = assignmentTable.getSelectionModel().getSelectedItem();
@@ -73,6 +75,7 @@ public class ViewAssignmentsController {
             statusLabel.setText("Please select an assignment to view.");
             return;
         }
+        // Show assignment details in a JavaFX information dialog
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Assignment Details");

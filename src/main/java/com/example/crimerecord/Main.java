@@ -9,11 +9,11 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
-
+// Shared reference to the current scene and stage
 public class Main extends Application {
     public static Scene scene;
     public static Stage primaryStage;
-
+    // Entry point for JavaFX application
     @Override
     public void start(Stage primaryStage) throws Exception {
         Main.primaryStage = primaryStage;
@@ -54,12 +54,12 @@ public class Main extends Application {
         System.out.println(" Scene switched to: " + fxml);
     }
 
-
+    // Loads an FXML layout and returns the root node
     private static Parent loadFXML(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fxml));
         return fxmlLoader.load();
     }
-
+    // Main method
     public static void main(String[] args) {
         launch(args);
     }

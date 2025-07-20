@@ -9,6 +9,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
+// JavaFX TableView and columns to display report data
 
 public class ViewReportsController {
 
@@ -19,9 +20,11 @@ public class ViewReportsController {
     @FXML private TableColumn<Report, String> colOfficer;
     @FXML private TableColumn<Report, String> colSummary;
     @FXML private TableColumn<Report, String> colDate;
+    // Buttons for report actions
 
     @FXML private Button btnView, btnRefresh, btnExport, btnPrint;
     @FXML private Label statusLabel;
+    // Label to display status or feedback to the user
 
     private String loggedInUserId;
     public void setLoggedInUserId(String id){
@@ -32,18 +35,21 @@ public class ViewReportsController {
     public void initialize() {
         bindColumns();
         loadReports();
+        // Set up button actions
 
         btnRefresh.setOnAction(e -> loadReports());
         btnView.setOnAction(e -> handleViewDetails());
         btnExport.setOnAction(e -> handleExportToPDF());
         btnPrint.setOnAction(e -> handlePrint());
     }
+    // Connects each table column to the corresponding Report model property
 
     private void bindColumns() {
         colReportId.setCellValueFactory(new PropertyValueFactory<>("reportId"));
         colCaseId.setCellValueFactory(new PropertyValueFactory<>("caseId"));
         colOfficer.setCellValueFactory(new PropertyValueFactory<>("officerName"));
         colSummary.setCellValueFactory(new PropertyValueFactory<>("summary"));
+        // Custom formatting for the report date column
 
         colDate.setCellValueFactory(cellData -> {
             if (cellData.getValue().getDate() != null) {
@@ -54,6 +60,7 @@ public class ViewReportsController {
             }
         });
     }
+    // Loads all reports from the backend service and displays them in the table
 
     private void loadReports() {
         try {
@@ -84,11 +91,13 @@ public class ViewReportsController {
         );
         details.showAndWait();
     }
+    // Placeholder method for PDF export (to be implemented)
 
     private void handleExportToPDF() {
         // Placeholder logic for PDF export
         statusLabel.setText("Export to PDF feature coming soon.");
     }
+    // Placeholder method for printing functionality
 
     private void handlePrint() {
         // Placeholder logic for printing

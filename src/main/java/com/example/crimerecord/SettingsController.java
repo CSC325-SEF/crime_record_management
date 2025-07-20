@@ -6,14 +6,13 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
-
+// Dropdown for selecting application theme
 public class SettingsController {
-
     @FXML
     private ChoiceBox<String> themeChoiceBox;
-
-    @FXML
+    // Text field for entering auto-save interval in minutes    @FXML
     private TextField autoSaveIntervalField;
+    // Save button to trigger settings update
 
     @FXML
     private Button btnSaveSettings;
@@ -34,7 +33,7 @@ public class SettingsController {
         // Attach event handler
         btnSaveSettings.setOnAction(this::handleSaveSettings);
     }
-
+    // Handles logic when the Save Settings button is clicked
     private void handleSaveSettings(ActionEvent event) {
         String selectedTheme = themeChoiceBox.getValue();
         String intervalText = autoSaveIntervalField.getText();
@@ -44,6 +43,7 @@ public class SettingsController {
             lblStatus.setStyle("-fx-text-fill: red;");
             return;
         }
+        // Check that the interval is a positive number
 
         try {
             int interval = Integer.parseInt(intervalText);

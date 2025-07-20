@@ -21,7 +21,7 @@ public class LoginController {
     public void setStage(Stage stage) {
         this.splashStage = stage;
     }
-
+    // Method to set the user role selected from the splash screen
     public void setUserRole(UserRole role) {
         this.selectedRole = role;
         System.out.println("Login screen for: " + role);
@@ -31,7 +31,7 @@ public class LoginController {
             messageLabel.setStyle("-fx-text-fill: #333;");
         }
     }
-
+    // UI fields linked from FXML
     @FXML
     private TextField emailField;
 
@@ -46,6 +46,7 @@ public class LoginController {
 
     @FXML
     private Button registerButton;
+    // Called when the Login view is initialized
 
     @FXML
     private void initialize() {
@@ -55,13 +56,13 @@ public class LoginController {
         emailField.textProperty().addListener((obs, oldText, newText) -> validateInput());
         passwordField.textProperty().addListener((obs, oldText, newText) -> validateInput());
     }
-
+    // Validates whether both email and password are entered
     private void validateInput() {
         boolean emailFilled = !emailField.getText().trim().isEmpty();
         boolean passwordFilled = !passwordField.getText().trim().isEmpty();
         loginButton.setDisable(!(emailFilled && passwordFilled));
     }
-
+    // Handles login logic when the login button is clicked
     @FXML
     private void handleLogin() {
         String email = emailField.getText().trim();
@@ -74,7 +75,7 @@ public class LoginController {
 
         loginButton.setDisable(true);
         messageLabel.setText("Logging in...");
-
+        // Run Firebase login on a background thread
         new Thread(() -> {
             try {
                 String uidOrError = FirestoreService.loginUser(email, password);
@@ -93,7 +94,7 @@ public class LoginController {
                                     loginButton.setDisable(false);
                                     return;
                                 }
-
+// If roles match, show success and redirect to proper dashboard
                                 messageLabel.setStyle("-fx-text-fill: green;");
                                 messageLabel.setText("Login successful! Redirecting...");
 

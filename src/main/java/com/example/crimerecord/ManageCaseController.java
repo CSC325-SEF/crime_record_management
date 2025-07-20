@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class ManageCaseController {
-
+    // Table and columns for displaying case data
     @FXML
     private TableView<Case> caseTable;
     @FXML private TableColumn<Case, String> colCaseId;
@@ -21,7 +21,7 @@ public class ManageCaseController {
     @FXML private TableColumn<Case, String> colStatus;
     @FXML private TableColumn<Case, String> colDate;
     @FXML private TableColumn<Case, String> colRemarks;
-
+    // Buttons and message label
     @FXML private Button btnAdd, btnEdit, btnDelete, btnRefresh;
     @FXML private Label messageLabel;
 
@@ -30,7 +30,7 @@ public class ManageCaseController {
     public void setLoggedInUserId(String id) {
         this.loggedInUserId = id;
     }
-
+    // Called when FXML is initialized
     @FXML
     public void initialize() {
         bindTableColumns();
@@ -41,7 +41,7 @@ public class ManageCaseController {
         // You can add logic for btnAdd and btnEdit later
     }
 
-
+    // Set up column bindings for the TableView
     private void bindTableColumns() {
         colCaseId.setCellValueFactory(new PropertyValueFactory<>("caseId"));
         colCriminalId.setCellValueFactory(new PropertyValueFactory<>("criminalId"));
@@ -58,6 +58,7 @@ public class ManageCaseController {
             }
         });
     }
+    //display all cases in the table
 
     private void loadCases() {
         try {
@@ -69,6 +70,7 @@ public class ManageCaseController {
             messageLabel.setText("Error loading cases.");
         }
     }
+    // Handle case deletion when the Delete button is clicked
 
     private void handleDelete() {
         Case selected = caseTable.getSelectionModel().getSelectedItem();

@@ -16,8 +16,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+//controller class displays FIR records using JAVAFX and the class
+//this class interacts with fire stone to fetch and display FIr data
 
-
+//JAVA FX UI elements
 public class FIRController {
     @FXML
     private TableView<FIR> firTable;
@@ -43,6 +45,8 @@ public class FIRController {
     @FXML
     private Label messageLabel;
 
+    //method to set up the table columns and loads FR data from the database
+
     @FXML
     public void initialize() {
         colFIRId.setCellValueFactory(new PropertyValueFactory<>("firId"));
@@ -63,6 +67,7 @@ public class FIRController {
 
         loadFIRs();
     }
+    //Loads all FIR records using FIRService and populates the table.
 
     private void loadFIRs() {
         try {
@@ -73,6 +78,7 @@ public class FIRController {
             messageLabel.setText("Error loading FIRs.");
         }
     }
+    // firestone collection
 
     private static final String COLLECTION_NAME = "firs";
 
@@ -80,6 +86,8 @@ public class FIRController {
         List<FIR> firList = new ArrayList<>();
         try {
             Firestore db = FirestoreClient.getFirestore();
+
+            // Convert each Firestore document to a FIR object
             ApiFuture<QuerySnapshot> future = db.collection(COLLECTION_NAME)
                     .whereEqualTo("officerId", officerId)
                     .get();
