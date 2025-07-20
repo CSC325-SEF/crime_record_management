@@ -1,7 +1,7 @@
 CRIME RECORD MANAGEMENT SYSTEM
 
 Crime Record Management System-JavaFX Application
-Overview:
+# Overview:
 This project is a desktop application built using JavaFX to manage and track crime-related information. The system includes separate dashboards for Admins, Civilian, and Officers, offering role-specific functionalities, and provides a login and registration system for user authentication.
 Modules:
 1.	Registration & Login
